@@ -18,9 +18,9 @@ class Soldier {
 
   Soldier(float x, float y) { 
     soldierpos = new PVector(x, y);
-    R = random(255);
-    G = random(255);
-    B = random(255);
+    R = 100;
+    G = 100;
+    B = 100;
     directionAngle = 0;
   }
 

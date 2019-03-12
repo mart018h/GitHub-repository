@@ -4,10 +4,12 @@ class Troops {
   int armysize;
 
   void initialize() {
-    //armysize = db.getInt("armysize");
-
+    db.query("SELECT * FROM PC WHERE save_id=(SELECT MAX(save_id) FROM PC)");
+    armysize = db.getInt("armysize");
+    println("Armysize = " + armysize);
+  
     p = new Pointer();
-    for (int i=0; i< 3; i++) {
+    for (int i=0; i< armysize; i++) {
       u = new Unit();
       unitlist.add(u);
     }
