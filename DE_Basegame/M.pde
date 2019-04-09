@@ -1,4 +1,4 @@
-class MainMenu {
+class Menu {
 
   void mainmenuInitiate() {
     uim.buttonList.add(new Button("New Game", width/2, height/6, 100, 40, 151, 151, 151));

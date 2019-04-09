@@ -3,7 +3,7 @@ class TerrainKeyFunctions {
   void keyPressed() {
     tm.th.keyPressed();
     tm.tr.keyPressed();
-    tm.td.keyPressed();
+    d.keyPressed();
   }
 
   void mousePressed() {

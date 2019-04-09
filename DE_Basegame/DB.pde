@@ -1,4 +1,4 @@
-class TerrainDatabase {
+class Database {
 
   void initiate() {
     db.query("CREATE TABLE IF NOT EXISTS Maps (Map_id INTEGER PRIMARY KEY AUTOINCREMENT, Name STRING)");

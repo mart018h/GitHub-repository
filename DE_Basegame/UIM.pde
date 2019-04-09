@@ -1,5 +1,5 @@
 class UserIntefaceManager {
-  MainMenu mm;
+  Menu m;
 
   // LAV ALLE DE HER MENUER OG UI
   boolean mainmenu = false;
@@ -17,13 +17,13 @@ class UserIntefaceManager {
   ArrayList<Button> buttonList = new ArrayList<Button>();
 
   void menuInitiate() {
-    mm = new MainMenu();
+    m = new Menu();
     mainmenu = true;
 
     if (loadingscreen) {
     } else if (mainmenu) {
-      mm.mainmenuInitiate();
-      println(buttonList.size());
+      m.mainmenuInitiate();
+      //println(buttonList.size());
     } else if (battleUI) {
     } else if (battleplanUI) {
     } else if (pauseUI) {
@@ -37,6 +37,7 @@ class UserIntefaceManager {
   }
 
   void display() {
-    mm.display();
+    
+    m.display();
   }
 }
