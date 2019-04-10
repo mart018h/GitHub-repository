@@ -13,7 +13,7 @@ class UserIntefaceManager {
   boolean ingame = false;
   boolean inmenu = false;
 
-  ArrayList<Button> buttonList = new ArrayList<Button>();
+  ArrayList<Button> buttonList = new ArrayList();
 
   void menuInitiate() {
     m = new Menu();
@@ -22,13 +22,15 @@ class UserIntefaceManager {
     if (ingame) {
       ui.initiate();
     } else if (inmenu) {
+      buttonList.clear();
       m.mainmenuInitiate();
+      println(buttonList.size());
     }
   }
 
   void display() {
     if (ingame) {
-      ui.display();
+      //ui.display();
     } else if (inmenu) {
       m.display();
     } else {

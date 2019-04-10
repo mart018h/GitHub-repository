@@ -1,6 +1,7 @@
 import de.bezier.data.sql.*;
 import fisica.*;
 SQLite db;
+FWorld world;
 GameManager gm;
 
 void setup() {
@@ -8,8 +9,10 @@ void setup() {
   size(1000, 700, P2D);
   //For home
   //size(1920,1080,P2D);
-
+  Fisica.init(this);
+  
   db = new SQLite(this, "Terrain.db" );
+  world = new FWorld();
   gm = new GameManager();
   
   gm.initiate();

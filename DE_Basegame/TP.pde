@@ -4,15 +4,15 @@ class TerrainPoint {
 
   TerrainPoint(int x, int y) {
     pointpos = new PVector(x, y);
-    println("X = " + (pointpos.x) + ", Y = " + (pointpos.y) + ", MapID = " + (gm.tm.mapID));
+    println("X = " + (pointpos.x) + ", Y = " + (pointpos.y) + ", MapID = " + (gm.te.mapID));
 
-    if (gm.tm.th.makehill) {
+    if (gm.te.th.makehill) {
       if (pointpos != null) {
-        db.query("INSERT INTO Hills (X,Y,Map_id) VALUES ("+pointpos.x+","+pointpos.y+","+gm.tm.mapID+")");
+        db.query("INSERT INTO Hills (X,Y,Map_id) VALUES ("+pointpos.x+","+pointpos.y+","+gm.te.mapID+")");
       }
-    } else if (gm.tm.tr.makeriver) {
+    } else if (gm.te.tr.makeriver) {
       if (pointpos != null) {
-        db.query("INSERT INTO Rivers (X,Y,Map_id) VALUES ("+pointpos.x+","+pointpos.y+","+gm.tm.mapID+")");
+        db.query("INSERT INTO Rivers (X,Y,Map_id) VALUES ("+pointpos.x+","+pointpos.y+","+gm.te.mapID+")");
       }
     }
   }

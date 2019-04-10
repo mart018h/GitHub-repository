@@ -9,7 +9,7 @@ class TerrainRiver {
     if (makeriver) {
       r = createShape();
       r.beginShape();
-      for (TerrainPoint tp : gm.tm.points) {
+      for (TerrainPoint tp : gm.te.points) {
         r.vertex(tp.pointpos.x, tp.pointpos.y);
       }
       r.endShape(CLOSE);
@@ -26,16 +26,17 @@ class TerrainRiver {
 
     //begin river shape
     if (keyCode == 75) { //K
-      gm.tm.tr.makeriver = true;
+      makeriver = true;
+      gm.te.th.makehill = false;
       println("making river");
     }
     //end river shape
     if (keyCode == 76) { //L
       rShapeList.add(r);
       makeriver = false;
-      gm.tm.points.clear();
+      gm.te.points.clear();
       println("river made");
-      db.query("INSERT INTO Rivers (X,Y,Map_id) VALUES ("+-10+","+-10+","+gm.tm.mapID+")");
+      db.query("INSERT INTO Rivers (X,Y,Map_id) VALUES ("+-10+","+-10+","+gm.te.mapID+")");
     }
   }
 }

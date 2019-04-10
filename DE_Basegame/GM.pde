@@ -1,32 +1,42 @@
 class GameManager {
   Database d;
-  TerrainManager tm;
+  TerrainEditor te;
   UserIntefaceManager uim;
+  TerrainWorld tw;
+  UnitType ut;
 
   void initiate() {
 
     d = new Database();
     uim = new UserIntefaceManager();
-    tm = new TerrainManager();
+    te = new TerrainEditor();
+    tw = new TerrainWorld();
+    ut = new UnitType();
 
     if (db.connect()) {
       d.initiate();
     }
     //uim.menuInitiate();
-    tm.terrainInitiate();
-    
+
+    te.terrainInitiate();
   }
 
   void display() {
     uim.display();
-    if (uim.battleUI || uim.battleplanUI || (uim.leveleditorUI && tm.maketerrain)) {
-      tm.terrainDisplay();
+    if (uim.leveleditorUI && te.maketerrain) {
+      te.terrainDisplay();
+    }
+    if (uim.battleUI || uim.battleplanUI) {
+      //tw.loadShapes();
+      //tw.runShapes();
+      world.step();
+      world.draw();
     }
   }
 
   void mousePressed() {
-    if ((tm.th.makehill || tm.tr.makeriver) && (uim.leveleditorUI && tm.maketerrain)) {
-      tm.mousePressed();
+    if ((te.th.makehill || te.tr.makeriver) && (uim.leveleditorUI && te.maketerrain)) {
+      te.mousePressed();
     }
 
     if (uim.b != null) {
@@ -38,8 +48,8 @@ class GameManager {
     uim.keyPressed();
     uim.menuInitiate();
     d.keyPressed();
-    if ((uim.leveleditorUI && tm.maketerrain)) {
-      tm.keyPressed();
+    if ((uim.leveleditorUI && te.maketerrain)) {
+      te.keyPressed();
     }
   }
 }

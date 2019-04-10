@@ -1,4 +1,4 @@
-class TerrainManager {
+class TerrainEditor {
   TerrainHill th;
   TerrainRiver tr;
   TerrainPoint tp;
