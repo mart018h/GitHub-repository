@@ -1,6 +1,6 @@
 class Button {
   
-  boolean buttonclicked = false;
+  //boolean buttonclicked = false;
   int locX, locY;
   int dimX, dimY;
   int R,G,B;
@@ -29,7 +29,7 @@ class Button {
   
   void mousePressed(){
     if((locX-dimX/2 < mouseX) && (mouseX < locX+dimX/2) &&(locY-dimY/2 < mouseY) && (mouseY < locY+dimY/2)){
-     buttonclicked = true;
+     //buttonclicked = true;
      println("button was clicked");
     } else {
       println("failed");

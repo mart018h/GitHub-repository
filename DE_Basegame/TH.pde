@@ -9,7 +9,7 @@ class TerrainHill {
     if (makehill) {
       h = createShape();
       h.beginShape();
-      for (TerrainPoint tp : tm.points) {
+      for (TerrainPoint tp : gm.tm.points) {
         h.vertex(tp.pointpos.x, tp.pointpos.y);
       }
       h.endShape(CLOSE);
@@ -32,8 +32,9 @@ class TerrainHill {
     if (keyCode == 73) { //I
       hShapeList.add(h);
       makehill = false;
-      tm.points.clear();
-      db.query("INSERT INTO Hills (X,Y,Map_id) VALUES ("+-10+","+-10+","+tm.mapID+")");
+      gm.tm.points.clear();
+      println("hill made");
+      db.query("INSERT INTO Hills (X,Y,Map_id) VALUES ("+-10+","+-10+","+gm.tm.mapID+")");
     }
   }
 }

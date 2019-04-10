@@ -1,5 +1,4 @@
 class TerrainManager {
-  TerrainKeyFunctions tkf;
   TerrainHill th;
   TerrainRiver tr;
   TerrainPoint tp;
@@ -8,9 +7,10 @@ class TerrainManager {
   int mapID;
   String mapName;
   boolean maketerrain = false;
+  boolean inbattle = false;
+  boolean editterrain = false;
 
   void terrainInitiate() {
-    tkf = new TerrainKeyFunctions();
     th = new TerrainHill();
     tr = new TerrainRiver();
 
@@ -18,8 +18,6 @@ class TerrainManager {
   }
 
   void terrainDisplay() {
-    background(255, 0); // jeg sætter alpha til 0 for at kunne udnytte alpha effekten til gameplay
-    //tv.display();
     th.display();
     tr.display();
     for (TerrainPoint tp : points) {
@@ -28,10 +26,12 @@ class TerrainManager {
   }
 
   void mousePressed() {
-    tkf.mousePressed();
+    points.add(new TerrainPoint(mouseX, mouseY));
   }
 
   void keyPressed() {
-    tkf.keyPressed();
+    th.keyPressed();
+    tr.keyPressed();
+    gm.d.keyPressed();
   }
 }

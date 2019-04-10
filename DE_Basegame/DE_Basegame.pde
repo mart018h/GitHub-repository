@@ -1,36 +1,18 @@
 import de.bezier.data.sql.*;
-SQLite db;
 import fisica.*;
-
-Database d;
-TerrainManager tm;
-Button b;
-UserIntefaceManager uim;
-
+SQLite db;
+GameManager gm;
 
 void setup() {
   //For school
-  //size(600, 600, P2D);
+  size(1000, 700, P2D);
   //For home
-  size(2000,1500,P2D);
+  //size(1920,1080,P2D);
 
   db = new SQLite(this, "Terrain.db" );
-  d = new Database();
-  uim = new UserIntefaceManager();
-  tm = new TerrainManager();
-
-  if (db.connect()) {
-    d.initiate();
-  }
-  uim.menuInitiate();
-  tm.terrainInitiate();
-}
-
-void mousePressed() {
-  tm.mousePressed();
-  if (b!=null) {
-    b.mousePressed();
-  }
+  gm = new GameManager();
+  
+  gm.initiate();
 }
 
 //void mouseClicked() {
@@ -40,11 +22,14 @@ void mousePressed() {
 //}
 
 void draw() {
-  uim.display();
+  background(255);
+  gm.display();
+}
 
-  //tm.terrainDisplay();
+void mousePressed() {
+  gm.mousePressed();
 }
 
 void keyPressed() {
-  tm.keyPressed();
+  gm.keyPressed();
 }

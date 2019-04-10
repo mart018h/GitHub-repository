@@ -1,12 +1,14 @@
 class UserIntefaceManager {
   Menu m;
+  UserInterface ui;
+  Button b;
 
   // LAV ALLE DE HER MENUER OG UI
-  boolean mainmenu = false;
-  boolean savemenu = false;
-  boolean newgamemenu = false;
-  boolean levelsavemenu = false;
-  boolean leaderboardmenu = false;
+  boolean mainMenu = false;
+  boolean saveMenu = false;
+  boolean newgameMenu = false;
+  boolean levelsaveMenu = false;
+  boolean leaderboardMenu = false;
   boolean leveleditorUI = false;
   boolean battleplanUI = false;
   boolean battleUI = false;
@@ -18,26 +20,14 @@ class UserIntefaceManager {
 
   void menuInitiate() {
     m = new Menu();
-    mainmenu = true;
-
-    if (loadingscreen) {
-    } else if (mainmenu) {
-      m.mainmenuInitiate();
-      //println(buttonList.size());
-    } else if (battleUI) {
-    } else if (battleplanUI) {
-    } else if (pauseUI) {
-    } else if (campaignUI) {
-    } else if (leveleditorUI) {
-    } else if (levelsavemenu) {
-    } else if (savemenu) {
-    } else if (newgamemenu) {
-    } else if (leaderboardmenu){
-    }
+    ui = new UserInterface();
+    
+    //ui.initiate();
+    m.mainmenuInitiate();
   }
 
   void display() {
-    
+    //ui.display();
     m.display();
   }
 }

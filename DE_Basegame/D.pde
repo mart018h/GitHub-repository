@@ -25,23 +25,23 @@ class Database {
     }
 
     if (key == 49) { //1
-      tm.maketerrain = true;
-      tm.mapName = "Level 1";
-      tm.mapID = 1;
+      gm.tm.maketerrain = true;
+      gm.tm.mapName = "Level 1";
+      gm.tm.mapID = 1;
       println("Map ID = 1");
-      db.query("INSERT INTO Maps (Name) VALUES ('%s')", tm.mapName);
+      db.query("INSERT INTO Maps (Name) VALUES ('%s')", gm.tm.mapName);
     } else if (key == 50) { //2
-      tm.maketerrain = true;
-      tm.mapName = "Level 2";
-      tm.mapID = 2;
+      gm.tm.maketerrain = true;
+      gm.tm.mapName = "Level 2";
+      gm.tm.mapID = 2;
       println("Map ID = 2");
-      db.query("INSERT INTO Maps (Name) VALUES ('%s')", tm.mapName);
+      db.query("INSERT INTO Maps (Name) VALUES ('%s')", gm.tm.mapName);
     } else if (key == 51) { //3
-      tm.maketerrain = true;
-      tm.mapName = "Level 3";
-      tm.mapID = 3;
+      gm.tm.maketerrain = true;
+      gm.tm.mapName = "Level 3";
+      gm.tm.mapID = 3;
       println("Map ID = 3");
-      db.query("INSERT INTO Maps (Name) VALUES ('%s')", tm.mapName);
+      db.query("INSERT INTO Maps (Name) VALUES ('%s')", gm.tm.mapName);
     }
   }
 
