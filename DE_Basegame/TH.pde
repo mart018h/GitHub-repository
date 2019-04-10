@@ -24,12 +24,12 @@ class TerrainHill {
 
   void keyPressed() {
     //begin hill shape
-    if (keyCode == 85) { //U
+    if (keyCode == 72) { //H
       makehill = true;
       println("making hill");
     }
     //end hill shape
-    if (keyCode == 73) { //I
+    if (keyCode == 74) { //J
       hShapeList.add(h);
       makehill = false;
       gm.tm.points.clear();

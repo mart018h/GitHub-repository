@@ -4,6 +4,7 @@ class UserInterface {
   }
   
   void display(){
+    noStroke();
     fill(200,0,50);
     beginShape();
     vertex(0,0);

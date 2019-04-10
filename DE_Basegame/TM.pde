@@ -7,8 +7,6 @@ class TerrainManager {
   int mapID;
   String mapName;
   boolean maketerrain = false;
-  boolean inbattle = false;
-  boolean editterrain = false;
 
   void terrainInitiate() {
     th = new TerrainHill();
@@ -32,6 +30,5 @@ class TerrainManager {
   void keyPressed() {
     th.keyPressed();
     tr.keyPressed();
-    gm.d.keyPressed();
   }
 }

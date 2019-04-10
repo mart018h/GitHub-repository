@@ -9,7 +9,7 @@ class Database {
   void keyPressed() {
     
     //deletes values in tables
-    if (key == 77) { //Shift + M
+    if (keyCode == 77) { //Shift + M
       db.query("DELETE FROM Maps");
       db.query("DELETE FROM Hills");
       db.query("DELETE FROM Rivers");
@@ -17,7 +17,7 @@ class Database {
     }
 
     //deletes tables for full restart
-    if (key == 78) { //Shift + N
+    if (keyCode == 78) { //Shift + N
       db.query("drop table if exists Maps");
       db.query("drop table if exists Hills");
       db.query("drop table if exists Rivers");

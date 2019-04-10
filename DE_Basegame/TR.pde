@@ -25,12 +25,12 @@ class TerrainRiver {
   void keyPressed() {
 
     //begin river shape
-    if (keyCode == 79) { //O
+    if (keyCode == 75) { //K
       gm.tm.tr.makeriver = true;
       println("making river");
     }
     //end river shape
-    if (keyCode == 80) { //P
+    if (keyCode == 76) { //L
       rShapeList.add(r);
       makeriver = false;
       gm.tm.points.clear();
