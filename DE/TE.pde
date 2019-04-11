@@ -2,24 +2,22 @@ class TerrainEditor {
   TerrainHill th;
   TerrainRiver tr;
   TerrainPoint tp;
-  TerrainWorld tw;
 
   ArrayList<TerrainPoint> points;
-  int mapID;
+  int mapID = 1;
   String mapName;
-  boolean maketerrain = false;
 
   void terrainInitiate() {
     th = new TerrainHill();
     tr = new TerrainRiver();
-   tw = new TerrainWorld();
+
     points = new ArrayList<TerrainPoint>();
   }
 
   void terrainDisplay() {
-    th.display();
-    tr.display();
-    //tw.display();
+    //th.display();
+    //tr.display();
+    
     for (TerrainPoint tp : points) {
       tp.display();
     }
@@ -27,10 +25,10 @@ class TerrainEditor {
 
   void mousePressed() {
     points.add(new TerrainPoint(mouseX, mouseY));
+    println("amount of points = " + points.size());
   }
 
   void keyPressed() {
-    //tw.keyPressed();
     th.keyPressed();
     tr.keyPressed();
   }

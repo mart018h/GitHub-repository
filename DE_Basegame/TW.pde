@@ -14,7 +14,7 @@ class TerrainWorld {
     //fill(100,0,0);
 
     if (maketerrainfeature) {
-      if (makehill) {
+      if (makehill) { //<>//
         fill(0, 200, 0, 50);
       } else if (makeriver) {
         fill(0, 0, 100, 150);
