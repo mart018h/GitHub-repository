@@ -25,10 +25,14 @@ class GameManager {
     uim.display();
     if (uim.leveleditorUI && te.maketerrain) {
       te.terrainDisplay();
+      //if (keyCode == 88) {
+      //  world.step();
+      //  world.draw();
+      //}
     }
     if (uim.battleUI || uim.battleplanUI) {
-      //tw.loadShapes();
-      //tw.runShapes();
+      tw.loadShapes();
+      tw.runShapes();
       world.step();
       world.draw();
     }
