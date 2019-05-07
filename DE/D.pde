@@ -13,7 +13,6 @@ class Database {
   }
 
   void keyPressed() {
-
     //deletes values in tables
     if (keyCode == 77) { //M
       db.query("DELETE FROM Hills");
@@ -27,19 +26,5 @@ class Database {
       db.query("drop table if exists Rivers");
       println("Databases dropped");
     }
-
-//    if (key == 49) { //1
-//      gm.te.mapID = 1;
-//      println("Map ID = 1");
-//      db.query("INSERT INTO Maps (Name) VALUES ('%s')", gm.te.mapName);
-//    } else if (key == 50) { //2
-//      gm.te.mapID = 2;
-//      println("Map ID = 2");
-//      db.query("INSERT INTO Maps (Name) VALUES ('%s')", gm.te.mapName);
-//    } else if (key == 51) { //3
-//      gm.te.mapID = 3;
-//      println("Map ID = 3");
-//      db.query("INSERT INTO Maps (Name) VALUES ('%s')", gm.te.mapName);
-//    }
   }
 }

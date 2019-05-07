@@ -22,50 +22,55 @@ class UserIntefaceManager {
   void uiShift() {
     //relocate all buttons to avoid unwanted interferance
     b1.setPosition(0, 0);
-    b1.setSize(1,1);
+    b1.setSize(1, 1);
     b2.setPosition(0, 0);
-    b2.setSize(1,1);
+    b2.setSize(1, 1);
     b3.setPosition(0, 0);
-    b3.setSize(1,1);
+    b3.setSize(1, 1);
     b4.setPosition(0, 0);
-    b4.setSize(1,1);
+    b4.setSize(1, 1);
     b5.setPosition(0, 0);
-    b5.setSize(1,1);
+    b5.setSize(1, 1);
     b6.setPosition(0, 0);
-    b6.setSize(1,1);
+    b6.setSize(1, 1);
     b7.setPosition(0, 0);
-    b7.setSize(1,1);
+    b7.setSize(1, 1);
     b8.setPosition(0, 0);
-    b8.setSize(1,1);
+    b8.setSize(1, 1);
     b9.setPosition(0, 0);
-    b9.setSize(1,1);
-    
+    b9.setSize(1, 1);
+    b10.setPosition(0, 0);
+    b10.setSize(1, 1);
+
     if (mainmenu) {
       //button size: x= 200, y= 100
       b1.setPosition((width-200)/2, height/4-100/2);
-      b1.setSize(200,100);
+      b1.setSize(200, 100);
       b2.setPosition((width-200)/2, height*2/4-100/2);
-      b2.setSize(200,100);
+      b2.setSize(200, 100);
       b3.setPosition((width-200)/2, height*3/4-100/2);
-      b3.setSize(200,100);
-    } else if (leveleditorselect){
-      b7.setPosition(width/4-200/2,(height-100)/2);
-      b7.setSize(200,100);
-      b8.setPosition(width*2/4-200/2,(height-100)/2);
-      b8.setSize(200,100);
-      b9.setPosition(width*3/4-200/2,(height-100)/2);
-      b9.setSize(200,100);
-    }else if (leveleditor) {
-      
+      b3.setSize(200, 100);
+    } else if (leveleditorselect) {
+      b7.setPosition(width/4-200/2, (height-100)/2);
+      b7.setSize(200, 100);
+      b8.setPosition(width*2/4-200/2, (height-100)/2);
+      b8.setSize(200, 100);
+      b9.setPosition(width*3/4-200/2, (height-100)/2);
+      b9.setSize(200, 100);
+    } else if (leveleditor) {
+
       //button size: x= 60, y= 40
       b4.setPosition(1100, 650);
-      b4.setSize(60,40);
+      b4.setSize(60, 40);
       b5.setPosition(1200, 650);
-      b5.setSize(60,40);
+      b5.setSize(60, 40);
       b6.setPosition(60, 40);
-      b6.setSize(60,40);
+      b6.setSize(60, 40);
     } else if (campaign) {
+      b10.setPosition(width/2,height/2);
+      b10.setSize(20, 20);
     } else if (battle) {
+      gm.lt.load();
     }
   }
 
@@ -76,6 +81,8 @@ class UserIntefaceManager {
       gm.te.terrainDisplay();
       world.step();
       world.draw();
+    } else if (leveleditorselect) {
+      ui.leveleditorselectDisplay();
     } else if (battle) {
       world.step();
       world.draw();
@@ -111,7 +118,7 @@ class UserIntefaceManager {
     pause = false;
     println("Level Editor");
   }
-  void uiLeveleditorselect(){
+  void uiLeveleditorselect() {
     mainmenu = false;
     leveleditor = false;
     leveleditorselect = true;

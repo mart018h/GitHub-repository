@@ -1,9 +1,9 @@
 class UserInterface {
 
   void mainmenuInitiate() {
-    b1 = new IFButton ("New Game",2,2);
-    b2 = new IFButton ("Terrain Editor",2,2);
-    b3 = new IFButton ("Quit",2,2);
+    b1 = new IFButton ("New Game", 2, 2);
+    b2 = new IFButton ("Terrain Editor", 2, 2);
+    b3 = new IFButton ("Quit", 2, 2);
 
     c.add (b1);
     c.add (b2);
@@ -14,6 +14,8 @@ class UserInterface {
   }
 
   void campaignInitiate() {
+    b10 = new IFButton (" ", 2, 2);
+    c.add (b10);
   }
 
   void campaignDisplay() {
@@ -40,9 +42,9 @@ class UserInterface {
   }
 
   void leveleditorInitiate() {
-    b4 = new IFButton ("New Hill", 2,2);
-    b5 = new IFButton ("New River", 2,2);
-    b6 = new IFButton ("Back", 2,2);
+    b4 = new IFButton ("New Hill", 2, 2);
+    b5 = new IFButton ("New River", 2, 2);
+    b6 = new IFButton ("Back", 2, 2);
 
     c.add (b4);
     c.add (b5);
@@ -51,18 +53,22 @@ class UserInterface {
 
   void leveleditorDisplay() {
   }
-  
+
   void leveleditorselectInitiate() {
-    b7 = new IFButton ("HIlly Terrain",2,2);
-    b8 = new IFButton ("Flat Terrain",2,2);
-    b9 = new IFButton ("Moderate Terrain",2,2);
-    
+    b7 = new IFButton ("HIlly Terrain", 2, 2);
+    b8 = new IFButton ("Flat Terrain", 2, 2);
+    b9 = new IFButton ("Moderate Terrain", 2, 2);
+
     c.add (b7);
     c.add (b8);
     c.add (b9);
   }
-  
-  void leveleditorselectDisplay(){
+
+  void leveleditorselectDisplay() {
+    textAlign(CENTER);
+    stroke(30);
+    fill(0);
+    text("If you choose to edit a Terrain it will permanently be erased", width/2, height*7/8);
   }
 
   void battleInitiate() {

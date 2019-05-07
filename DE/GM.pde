@@ -31,16 +31,6 @@ class GameManager {
 
   void display() {
     uim.display();
-    if (uim.leveleditor) {
-      te.terrainDisplay();
-      world.step();
-      world.draw();
-    }
-    if (uim.battle) {
-
-      world.step();
-      world.draw();
-    }
   }
 
   void mousePressed() {

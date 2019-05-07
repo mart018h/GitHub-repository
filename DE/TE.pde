@@ -2,7 +2,7 @@ class TerrainEditor {
   TerrainPoint tp;
 
   ArrayList<TerrainPoint> points;
-  int mapID = 1;
+  int mapID;
 
   void terrainInitiate() {
 
