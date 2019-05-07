@@ -28,18 +28,18 @@ class Database {
       println("Databases dropped");
     }
 
-    if (key == 49) { //1
-      gm.te.mapID = 1;
-      println("Map ID = 1");
-      db.query("INSERT INTO Maps (Name) VALUES ('%s')", gm.te.mapName);
-    } else if (key == 50) { //2
-      gm.te.mapID = 2;
-      println("Map ID = 2");
-      db.query("INSERT INTO Maps (Name) VALUES ('%s')", gm.te.mapName);
-    } else if (key == 51) { //3
-      gm.te.mapID = 3;
-      println("Map ID = 3");
-      db.query("INSERT INTO Maps (Name) VALUES ('%s')", gm.te.mapName);
-    }
+//    if (key == 49) { //1
+//      gm.te.mapID = 1;
+//      println("Map ID = 1");
+//      db.query("INSERT INTO Maps (Name) VALUES ('%s')", gm.te.mapName);
+//    } else if (key == 50) { //2
+//      gm.te.mapID = 2;
+//      println("Map ID = 2");
+//      db.query("INSERT INTO Maps (Name) VALUES ('%s')", gm.te.mapName);
+//    } else if (key == 51) { //3
+//      gm.te.mapID = 3;
+//      println("Map ID = 3");
+//      db.query("INSERT INTO Maps (Name) VALUES ('%s')", gm.te.mapName);
+//    }
   }
 }

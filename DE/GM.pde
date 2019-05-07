@@ -18,23 +18,25 @@ class GameManager {
     if (db.connect()) {
       d.initiate();
     }
-    //uim.menuInitiate();
+    
+    uim.uiInitiate();
+    uim.uiShift();
 
     world.setGravity(0, 0);
 
     te.terrainInitiate();
     lt.load();
-    println("amount of shapes = " +tw.shapeList.size());
+    //println("amount of shapes = " +tw.shapeList.size());
   }
 
   void display() {
     uim.display();
-    if (uim.leveleditorUI) {
+    if (uim.leveleditor) {
       te.terrainDisplay();
       world.step();
       world.draw();
     }
-    if (uim.battleUI || uim.battleplanUI) {
+    if (uim.battle) {
 
       world.step();
       world.draw();
@@ -43,32 +45,23 @@ class GameManager {
 
   void mousePressed() {
     //if ((te.th.makehill || te.tr.makeriver) && (uim.leveleditorUI && te.maketerrain)) {
-    if (uim.leveleditorUI) {
+    if (uim.leveleditor) {
       te.mousePressed();
-    }
-
-    if (uim.b != null) {
-      uim.b.mousePressed();
     }
   }
 
   void keyPressed() {
-    uim.keyPressed();
-    uim.menuInitiate();
     d.keyPressed();
-    if (uim.leveleditorUI) {
+    if (uim.leveleditor) {
       //te.keyPressed();
       if (gm.te.points != null) {
-        tw.keyPressed();
+        //tw.keyPressed();
       }
     }
-    if (uim.battleUI || uim.battleplanUI) {
+    if (uim.battle) {
       tw.loadShapes(lt.hillsmap_1);
       tw.loadShapes(lt.riversmap_1);
     }
   }
 
-  void keyReleased() {
-    tw.keyReleased();
-  }
 }

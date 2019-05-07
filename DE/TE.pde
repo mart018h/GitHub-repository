@@ -1,15 +1,10 @@
 class TerrainEditor {
-  TerrainHill th;
-  TerrainRiver tr;
   TerrainPoint tp;
 
   ArrayList<TerrainPoint> points;
   int mapID = 1;
-  String mapName;
 
   void terrainInitiate() {
-    th = new TerrainHill();
-    tr = new TerrainRiver();
 
     points = new ArrayList<TerrainPoint>();
   }
@@ -29,7 +24,6 @@ class TerrainEditor {
   }
 
   void keyPressed() {
-    th.keyPressed();
-    tr.keyPressed();
+
   }
 }

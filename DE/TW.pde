@@ -27,6 +27,7 @@ class TerrainWorld {
   }
 
   void drawShapes() {
+    fill(200, 0, 0);
     p = new FPoly();
     for (TerrainPoint t : gm.te.points) {
       p.vertex(t.pointpos.x, t.pointpos.y);
@@ -50,28 +51,43 @@ class TerrainWorld {
     gm.te.points.clear();
   }
 
-  void keyPressed() {
-    if (key == 'h') {
-      makehill = true;
-      drawShapes();
-      println("hill made");
-    }
-    if (key == 'k') {
-      makeriver = true;
-      drawShapes();
-      println("river made");
-    }
+  void makeHill() {
+    makehill = true;
+    drawShapes();
+    println("hill made");
+    makehill = false;
+    db.query("INSERT INTO Hills (X,Y,Map_id) VALUES ("+-10+","+-10+","+gm.te.mapID+")");
   }
 
-
-  void keyReleased() {
-    if (key == 'h') {
-      makehill = false;
-      db.query("INSERT INTO Hills (X,Y,Map_id) VALUES ("+-10+","+-10+","+gm.te.mapID+")");
-    }
-    if (key == 'k'){
-      makeriver = false;
-      db.query("INSERT INTO Rivers (X,Y,Map_id) VALUES ("+-10+","+-10+","+gm.te.mapID+")");
-    }
+  void makeRiver() {
+    makeriver = true;
+    drawShapes();
+    println("river made");
+    makeriver = false;
+    db.query("INSERT INTO Rivers (X,Y,Map_id) VALUES ("+-10+","+-10+","+gm.te.mapID+")");
   }
+
+  //void keyPressed() {
+  //  if (key == 'h') {
+  //    makehill = true;
+  //    drawShapes();
+  //    println("hill made");
+  //  }
+  //  if (key == 'k') {
+  //    makeriver = true;
+  //    drawShapes();
+  //    println("river made");
+  //  }
+  //}
+
+  //void keyReleased() {
+  //  if (key == 'h') {
+  //    makehill = false;
+  //    db.query("INSERT INTO Hills (X,Y,Map_id) VALUES ("+-10+","+-10+","+gm.te.mapID+")");
+  //  }
+  //  if (key == 'k') {
+  //    makeriver = false;
+  //    db.query("INSERT INTO Rivers (X,Y,Map_id) VALUES ("+-10+","+-10+","+gm.te.mapID+")");
+  //  }
+  //}
 }
