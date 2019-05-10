@@ -14,7 +14,7 @@ void setup() {
   
   c = new GUIController (this);
   db = new SQLite(this, "Terrain.db" );
-  world = new FWorld();
+  world = new FWorld(0,0,768,1366);
   gm = new GameManager();
 
   gm.initiate();

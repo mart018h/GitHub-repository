@@ -21,7 +21,8 @@ class GameManager {
     
     uim.uiInitiate();
     uim.uiShift();
-
+  
+    world.setEdges();
     world.setGravity(0, 0);
 
     te.terrainInitiate();
