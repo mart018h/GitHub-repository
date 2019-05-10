@@ -58,10 +58,12 @@ class UserInterface {
     b7 = new IFButton ("HIlly Terrain", 2, 2);
     b8 = new IFButton ("Flat Terrain", 2, 2);
     b9 = new IFButton ("Moderate Terrain", 2, 2);
-
+    b11 = new IFButton ("Back", 2, 2);
+    
     c.add (b7);
     c.add (b8);
     c.add (b9);
+    c.add (b11);
   }
 
   void leveleditorselectDisplay() {

@@ -4,17 +4,17 @@ import fisica.*;
 SQLite db;
 FWorld world;
 GUIController c;
-IFButton b1, b2, b3, b4, b5, b6, b7, b8, b9, b10;
+IFButton b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11;
 
 GameManager gm;
 
 void setup() {
-  fullScreen(P2D);
+  size(1200, 700, P2D);
   Fisica.init(this);
-  
+
   c = new GUIController (this);
   db = new SQLite(this, "Terrain.db" );
-  world = new FWorld(0,0,768,1366);
+  world = new FWorld();
   gm = new GameManager();
 
   gm.initiate();
@@ -28,6 +28,7 @@ void setup() {
   b8.addActionListener(this);
   b9.addActionListener(this);
   b10.addActionListener(this);
+  b11.addActionListener(this);
 }
 
 //void mouseClicked() {
@@ -62,12 +63,17 @@ void actionPerformed (GUIEvent e) {
     exit();
     println("Button three was clicked");
   } else if (e.getSource() == b4) {
-    gm.tw.makeHill();
+    if (gm.te.points.size() != 0) {
+      gm.tw.makeHill();
+    }
     println("Button four was clicked");
   } else if (e.getSource() == b5) {
-    gm.tw.makeRiver();
+    if (gm.te.points.size() != 0) {
+      gm.tw.makeRiver();
+    }
     println("Button five was clicked");
   } else if (e.getSource() == b6) {
+    gm.te.points.clear();
     gm.uim.uiMainmenu();
     gm.uim.uiShift();
     println("Button six was clicked");
@@ -95,7 +101,12 @@ void actionPerformed (GUIEvent e) {
   } else if (e.getSource() == b10) {
     gm.te.mapID = 1;
     gm.uim.uiBattle();
+    gm.lt.load();
     gm.uim.uiShift();
     println("Button ten was clicked");
+  }else if (e.getSource() == b11) {
+    gm.uim.uiMainmenu();
+    gm.uim.uiShift();
+    println("Button eleven was clicked");
   }
 }

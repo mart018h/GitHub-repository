@@ -18,16 +18,15 @@ class GameManager {
     if (db.connect()) {
       d.initiate();
     }
-    
-    uim.uiInitiate();
-    uim.uiShift();
-  
+
     world.setEdges();
     world.setGravity(0, 0);
 
+    uim.uiInitiate();
+    uim.uiShift();
+
     te.terrainInitiate();
     lt.load();
-    //println("amount of shapes = " +tw.shapeList.size());
   }
 
   void display() {
@@ -35,7 +34,6 @@ class GameManager {
   }
 
   void mousePressed() {
-    //if ((te.th.makehill || te.tr.makeriver) && (uim.leveleditorUI && te.maketerrain)) {
     if (uim.leveleditor) {
       te.mousePressed();
     }
@@ -43,16 +41,9 @@ class GameManager {
 
   void keyPressed() {
     d.keyPressed();
-    if (uim.leveleditor) {
-      //te.keyPressed();
-      if (gm.te.points != null) {
-        //tw.keyPressed();
-      }
-    }
     if (uim.battle) {
       tw.loadShapes(lt.hillsmap_1);
       tw.loadShapes(lt.riversmap_1);
     }
   }
-
 }

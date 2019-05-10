@@ -41,6 +41,8 @@ class UserIntefaceManager {
     b9.setSize(1, 1);
     b10.setPosition(0, 0);
     b10.setSize(1, 1);
+    b11.setPosition(0, 0);
+    b11.setSize(1, 1);
 
     if (mainmenu) {
       //button size: x= 200, y= 100
@@ -51,26 +53,30 @@ class UserIntefaceManager {
       b3.setPosition((width-200)/2, height*3/4-100/2);
       b3.setSize(200, 100);
     } else if (leveleditorselect) {
+      //button size: x= 200, y= 100
       b7.setPosition(width/4-200/2, (height-100)/2);
       b7.setSize(200, 100);
       b8.setPosition(width*2/4-200/2, (height-100)/2);
       b8.setSize(200, 100);
       b9.setPosition(width*3/4-200/2, (height-100)/2);
       b9.setSize(200, 100);
+      
+      b11.setPosition(60, 40);
+      b11.setSize(60, 40);
     } else if (leveleditor) {
-
       //button size: x= 60, y= 40
-      b4.setPosition(1100, 650);
+      b4.setPosition(1000, 650);
       b4.setSize(60, 40);
-      b5.setPosition(1200, 650);
+      b5.setPosition(1100, 650);
       b5.setSize(60, 40);
       b6.setPosition(60, 40);
       b6.setSize(60, 40);
     } else if (campaign) {
+      //button size: x= 20, y= 20
       b10.setPosition(width/2,height/2);
       b10.setSize(20, 20);
     } else if (battle) {
-      gm.lt.load();
+      
     }
   }
 
@@ -84,6 +90,7 @@ class UserIntefaceManager {
     } else if (leveleditorselect) {
       ui.leveleditorselectDisplay();
     } else if (battle) {
+      ui.battleDisplay();
       world.step();
       world.draw();
     } else if (campaign) {
