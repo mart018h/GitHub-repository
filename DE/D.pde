@@ -6,10 +6,16 @@ class Database {
 
     db.query("CREATE TABLE IF NOT EXISTS Player_Army (unit_id INTEGER PRIMARY KEY AUTOINCREMENT, Unit_type STRING)");
     db.query("DELETE FROM Player_Army");
-    db.query("INSERT INTO Player_Army (Unit_type) VALUES ('%s')", gm.ut.Spear_Legion_I);
-    db.query("INSERT INTO Player_Army (Unit_type) VALUES ('%s')", gm.ut.Spear_Legion_I);
-    db.query("INSERT INTO Player_Army (Unit_type) VALUES ('%s')", gm.ut.Sword_Legion_I);
-    db.query("INSERT INTO Player_Army (Unit_type) VALUES ('%s')", gm.ut.Archer_I);
+    db.query("INSERT INTO Player_Army (Unit_type) VALUES ('%s')", gm.bm.u.Spear_Legion_I);
+    db.query("INSERT INTO Player_Army (Unit_type) VALUES ('%s')", gm.bm.u.Spear_Legion_I);
+    db.query("INSERT INTO Player_Army (Unit_type) VALUES ('%s')", gm.bm.u.Sword_Legion_I);
+    db.query("INSERT INTO Player_Army (Unit_type) VALUES ('%s')", gm.bm.u.Archer_I);
+    
+    db.query("CREATE TABLE IF NOT EXISTS Opponent_Army (unit_id INTEGER PRIMARY KEY AUTOINCREMENT, Unit_type STRING");
+    db.query("INSERT INTO Opponent_Army (Unit_type) VALUES ('%s')", gm.bm.u.Spear_Legion_I);
+    db.query("INSERT INTO Opponent_Army (Unit_type) VALUES ('%s')", gm.bm.u.Spear_Legion_I);
+    db.query("INSERT INTO Opponent_Army (Unit_type) VALUES ('%s')", gm.bm.u.Sword_Legion_I);
+    db.query("INSERT INTO Opponent_Army (Unit_type) VALUES ('%s')", gm.bm.u.Archer_I);
   }
 
   void keyPressed() {

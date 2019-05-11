@@ -1,5 +1,4 @@
 class UserIntefaceManager {
-  //Menu m;
   UserInterface ui;
 
   // LAV ALLE DE HER MENUER OG UI
@@ -12,11 +11,11 @@ class UserIntefaceManager {
 
   void uiInitiate() {
     ui = new UserInterface();
-    ui.mainmenuInitiate();
-    ui.leveleditorInitiate();
-    ui.leveleditorselectInitiate();
-    ui.battleInitiate();
-    ui.campaignInitiate();
+    ui.uimainmenuInitiate();
+    ui.uileveleditorInitiate();
+    ui.uileveleditorselectInitiate();
+    ui.uibattleInitiate();
+    ui.uicampaignInitiate();
   }
 
   void uiShift() {
@@ -82,19 +81,19 @@ class UserIntefaceManager {
 
   void display() {
     if (mainmenu) {
-      ui.mainmenuDisplay();
+      ui.uimainmenuDisplay();
     } else if (leveleditor) {
       gm.te.terrainDisplay();
       world.step();
       world.draw();
     } else if (leveleditorselect) {
-      ui.leveleditorselectDisplay();
+      ui.uileveleditorselectDisplay();
     } else if (battle) {
-      ui.battleDisplay();
+      ui.uibattleDisplay();
       world.step();
       world.draw();
     } else if (campaign) {
-      ui.campaignDisplay();
+      ui.uicampaignDisplay();
     }
   }
 

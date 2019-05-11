@@ -1,18 +1,18 @@
 class GameManager {
   Database d;
+  BattleManager bm;
   TerrainEditor te;
   UserIntefaceManager uim;
   TerrainWorld tw;
-  UnitType ut;
   LoadTerrain lt;
 
   void initiate() {
 
     d = new Database();
+    bm = new BattleManager();
     uim = new UserIntefaceManager();
     te = new TerrainEditor();
     tw = new TerrainWorld();
-    ut = new UnitType();
     lt = new LoadTerrain();
 
     if (db.connect()) {
@@ -21,6 +21,7 @@ class GameManager {
 
     world.setEdges();
     world.setGravity(0, 0);
+    world.setGrabbable(false);
 
     uim.uiInitiate();
     uim.uiShift();
