@@ -7,7 +7,7 @@ class LoadTerrain {
   ArrayList<PVector> riversmap_2 = new ArrayList();
   ArrayList<PVector> riversmap_3 = new ArrayList();
 
-  void load() {
+  void loadTerrain() {
     db.query("SELECT * FROM Hills");
 
     while (db.next()) {

@@ -101,7 +101,7 @@ void actionPerformed (GUIEvent e) {
   } else if (e.getSource() == b10) {
     gm.te.mapID = 1;
     gm.uim.uiBattle();
-    gm.lt.load();
+    gm.uim.ui.uibattleInitiate();
     gm.uim.uiShift();
     println("Button ten was clicked");
   }else if (e.getSource() == b11) {

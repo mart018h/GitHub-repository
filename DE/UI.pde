@@ -74,6 +74,8 @@ class UserInterface {
   }
 
   void uibattleInitiate() {
+    gm.lt.loadTerrain();
+    gm.lu.getUnits();
   }
 
   void uibattleDisplay() {
@@ -83,6 +85,6 @@ class UserInterface {
     rect(20, 50, 200, 600);
 
     stroke(200, 0, 0);
-    rect(980,50,200,600);
+    rect(980, 50, 200, 600);
   }
 }

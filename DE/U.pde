@@ -14,30 +14,47 @@ class Unit {
   String Horsemen_II = "Horsemen_I";
 
   //opponent units
-
+  String Berserker = "Berserker";
+  String Pillager = "Pillager";
+  String Hunter = "Hunter";
 
   //unit values
-    //ArrayList <> units = new ArrayList();
+  //ArrayList <> units = new ArrayList();
   ArrayList <FBox> soldiers = new ArrayList();
   int unitSize;
   FBox b;
-  
-  void newUnit(String unit_owner, String unit_id){
-    pushMatrix();
-    if (unit_owner == "player_unit") {
-      translate(210, 70);
-    } else if (unit_owner == "opponent_unit") {
-      translate(990, 70);
-      rotate(PI);
+
+  void newUnit(String unit_owner, String unit_type) {
+    if (unit_type == Sword_Legion_I || unit_type == Sword_Legion_II || unit_type == Sword_Legion_III) {
+      unitSize = 40;
+    } else if (unit_type == Spear_Legion_I || unit_type == Spear_Legion_II) {
+      unitSize = 50;
+    } else if (unit_type == Archer_I || unit_type == Archer_II) {
+      unitSize = 30;
+    } else if (unit_type == Horsemen_I || unit_type == Horsemen_II) {
+      unitSize = 20;
+    } else if (unit_type == Pillager) {
+      unitSize = 50;
+    } else if (unit_type == Berserker) {
+      unitSize = 40;
+    } else if (unit_type == Hunter) {
+      unitSize = 30;
     }
 
-    for (int i = 0; i < unitSize; i++) {
-      b = new FBox(20, 20);
-      b.addToWorld(world);
-      b.setPosition(i * 20, i * unitSize);
-      soldiers.add(b);
+      pushMatrix();
+      if (unit_owner == "player_unit") {
+        translate(210, 70);
+      } else if (unit_owner == "opponent_unit") {
+        translate(990, 70);
+        rotate(PI);
+      }
+
+      for (int i = 0; i < unitSize; i++) {
+        b = new FBox(20, 20);
+        b.addToWorld(world);
+        b.setPosition(i * 20, i * unitSize);
+        soldiers.add(b);
+      }
+      popMatrix();
     }
-    popMatrix();
   }
-  
-}
