@@ -13,6 +13,11 @@ class BattleManager {
     //for (Soldier s : gm.u.soldierList) {
       Soldier s = gm.u.soldierList.get(i);
       s.sb.setVelocity(1, 0);
+      if(!gm.u.s.controlable){
+        for(int j = 0; j < gm.u.soldierList.size(); j++){
+          
+        }
+      }
     }
     println("soldierList = " + gm.u.soldierList.size());
   }
