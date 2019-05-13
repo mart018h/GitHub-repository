@@ -25,10 +25,10 @@ class LoadTerrain {
     println("hill map 1 elements = " +hillsmap_1.size());
     println("hill map 2 elements = " +hillsmap_2.size());
     println("hill map 3 elements = " +hillsmap_3.size());
-    
+
     db.query("SELECT * FROM Rivers");
-    
-    while(db.next()){
+
+    while (db.next()) {
       if (db.getInt("Map_id") == 1) {
         riversmap_1.add(new PVector(db.getFloat("X"), db.getFloat("Y")));
         //println("first river");

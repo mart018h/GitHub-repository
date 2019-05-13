@@ -1,6 +1,6 @@
 class GameManager {
   Database d;
-  //BattleManager bm;
+  BattleManager bm;
   TerrainEditor te;
   UserIntefaceManager uim;
   TerrainWorld tw;
@@ -11,14 +11,14 @@ class GameManager {
   void initiate() {
 
     d = new Database();
-    //bm = new BattleManager();
+    bm = new BattleManager();
     uim = new UserIntefaceManager();
     te = new TerrainEditor();
     tw = new TerrainWorld();
     lt = new LoadTerrain();
     lu = new LoadUnit();
     u = new Unit();
-    
+
     if (db.connect()) {
       d.initiate();
     }
@@ -29,13 +29,13 @@ class GameManager {
 
     uim.uiInitiate();
     uim.uiShift();
-    
-    
+
+
     te.terrainInitiate();
-    lt.loadTerrain();
   }
 
   void display() {
+    rectMode(CORNER);
     uim.display();
   }
 

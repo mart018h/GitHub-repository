@@ -11,11 +11,11 @@ class UserIntefaceManager {
 
   void uiInitiate() {
     ui = new UserInterface();
-    ui.uimainmenuInitiate();
-    ui.uileveleditorInitiate();
     ui.uileveleditorselectInitiate();
-    ui.uibattleInitiate();
+    ui.uileveleditorInitiate();
     ui.uicampaignInitiate();
+    ui.uimainmenuInitiate();
+    ui.uibattleInitiate();
   }
 
   void uiShift() {
@@ -42,6 +42,8 @@ class UserIntefaceManager {
     b10.setSize(1, 1);
     b11.setPosition(0, 0);
     b11.setSize(1, 1);
+    b12.setPosition(0, 0);
+    b12.setSize(1, 1);
 
     if (mainmenu) {
       //button size: x= 200, y= 100
@@ -59,7 +61,7 @@ class UserIntefaceManager {
       b8.setSize(200, 100);
       b9.setPosition(width*3/4-200/2, (height-100)/2);
       b9.setSize(200, 100);
-      
+      //button size x = 60, y =40
       b11.setPosition(60, 40);
       b11.setSize(60, 40);
     } else if (leveleditor) {
@@ -72,10 +74,12 @@ class UserIntefaceManager {
       b6.setSize(60, 40);
     } else if (campaign) {
       //button size: x= 20, y= 20
-      b10.setPosition(width/2,height/2);
+      b10.setPosition(width/2-10, height/2);
       b10.setSize(20, 20);
+      b12.setPosition(0, 0);
+      b12.setSize(60, 40);
     } else if (battle) {
-      
+
     }
   }
 
@@ -89,12 +93,13 @@ class UserIntefaceManager {
     } else if (leveleditorselect) {
       ui.uileveleditorselectDisplay();
     } else if (battle) {
-      ui.uibattleDisplay();
       world.step();
       world.draw();
+      ui.uibattleDisplay();
     } else if (campaign) {
       ui.uicampaignDisplay();
     }
+
   }
 
   void uiCampaign() {

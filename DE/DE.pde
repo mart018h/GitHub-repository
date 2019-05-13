@@ -4,7 +4,7 @@ import fisica.*;
 SQLite db;
 FWorld world;
 GUIController c;
-IFButton b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11;
+IFButton b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12;
 
 GameManager gm;
 
@@ -16,7 +16,7 @@ void setup() {
   db = new SQLite(this, "Terrain.db" );
   world = new FWorld();
   gm = new GameManager();
-
+  
   gm.initiate();
   b1.addActionListener(this);
   b2.addActionListener(this);
@@ -29,6 +29,7 @@ void setup() {
   b9.addActionListener(this);
   b10.addActionListener(this);
   b11.addActionListener(this);
+  b12.addActionListener(this);
 }
 
 //void mouseClicked() {
@@ -102,11 +103,19 @@ void actionPerformed (GUIEvent e) {
     gm.te.mapID = 1;
     gm.uim.uiBattle();
     gm.uim.ui.uibattleInitiate();
+    gm.bm.battleInitiate();
+    
+    //gm.tw.loadshapes(gm.lt.hillsmap_1);
+    
     gm.uim.uiShift();
     println("Button ten was clicked");
-  }else if (e.getSource() == b11) {
+  } else if (e.getSource() == b11) {
     gm.uim.uiMainmenu();
     gm.uim.uiShift();
     println("Button eleven was clicked");
+  } else if (e.getSource() == b12) {
+    gm.uim.uiMainmenu();
+    gm.uim.uiShift();
+    println("Button thirdteen was clicked");
   }
 }

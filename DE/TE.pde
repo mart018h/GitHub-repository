@@ -15,7 +15,7 @@ class TerrainEditor {
   int b6y;
   int b6width;
   int b6height;
-  
+
   void terrainInitiate() {
     points = new ArrayList<TerrainPoint>();
   }
@@ -43,8 +43,8 @@ class TerrainEditor {
     boolean condition2 = ((mouseX < b5x) || (mouseX > b5x + b5width)) && ((mouseY < b5y) || (mouseY > b5y + b5height));
     boolean condition3 = ((mouseX < b6x) || (mouseX > b6x + b6width)) && ((mouseY < b6y) || (mouseY > b6y + b6height));
     if (condition1 && condition2 && condition3) {
-    points.add(new TerrainPoint(mouseX, mouseY));
-    println("amount of points = " + points.size());
+      points.add(new TerrainPoint(mouseX, mouseY));
+      println("amount of points = " + points.size());
     }
   }
 }

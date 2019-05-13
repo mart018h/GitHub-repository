@@ -15,30 +15,54 @@ class UserInterface {
 
   void uicampaignInitiate() {
     b10 = new IFButton (" ", 2, 2);
+    b12 = new IFButton ("back", 2, 2);
+
     c.add (b10);
+    c.add (b12);
   }
 
   void uicampaignDisplay() {
-    noStroke();
-    fill(200, 0, 50);
-    beginShape();
-    vertex(0, 0);
-    vertex(width, 0);
-    vertex(width, height);
-    vertex(0, height);
-    endShape(CLOSE);
+    fill(0, 0, 200, 150);
+    rect(0, 0, width, height);
 
-    fill(255);
+    fill(0, 200, 0);
     beginShape();
-    vertex(20, 50);
-    vertex(50, 20);
-    vertex(width-50, 20);
-    vertex(width-20, 50);
-    vertex(width-20, height-50);
-    vertex(width-50, height-20);
-    vertex(50, height-20);
-    vertex(20, height-50);
-    endShape(CLOSE);
+    vertex(105, 348);
+    vertex(130, 248);
+    vertex(207, 179);
+    vertex(261, 112);
+    vertex(349, 104);
+    vertex(458, 66);
+    vertex(577, 80);
+    vertex(678, 59);
+    vertex(772, 83);
+    vertex(871, 86);
+    vertex(947, 69);
+    vertex(1097, 116);
+    vertex(1067, 188);
+    vertex(1064, 302);
+    vertex(989, 377);
+    vertex(952, 481);
+    vertex(941, 591);
+    vertex(846, 636);
+    vertex(749, 618);
+    vertex(676, 580);
+    vertex(663, 498);
+    vertex(724, 448);
+    vertex(754, 392);
+    vertex(728, 339);
+    vertex(653, 322);
+    vertex(595, 374);
+    vertex(577, 448);
+    vertex(586, 515);
+    vertex(503, 585);
+    vertex(413, 614);
+    vertex(329, 624);
+    vertex(241, 613);
+    vertex(171, 567);
+    vertex(121, 484);
+    vertex(73, 416);
+    endShape();
   }
 
   void uileveleditorInitiate() {
@@ -74,8 +98,7 @@ class UserInterface {
   }
 
   void uibattleInitiate() {
-    gm.lt.loadTerrain();
-    gm.lu.getUnits();
+    
   }
 
   void uibattleDisplay() {

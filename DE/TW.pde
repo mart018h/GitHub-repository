@@ -20,6 +20,12 @@ class TerrainWorld {
         }
         p.setSensor(true);
         
+        if (thisList == gm.lt.hillsmap_1 || thisList == gm.lt.hillsmap_2 || thisList == gm.lt.hillsmap_3) {
+          p.setFill(0, 200, 0, 100);
+        } else if (thisList == gm.lt.riversmap_1 || thisList == gm.lt.riversmap_2 || thisList == gm.lt.riversmap_3) {
+          p.setFill(0, 0, 150, 100);
+        }
+        
         world.add(p);
         gm.te.points.clear();
       }
@@ -27,7 +33,6 @@ class TerrainWorld {
   }
 
   void drawShapes() {
-    fill(200, 0, 0);
     p = new FPoly();
     for (TerrainPoint t : gm.te.points) {
       p.vertex(t.pointpos.x, t.pointpos.y);
@@ -35,19 +40,19 @@ class TerrainWorld {
     p.setSensor(true);
 
     if (makehill) {
-      p.setFill(0,200,0,100);
+      p.setFill(0, 200, 0, 100);
       for (TerrainPoint t : gm.te.points) {
         db.query("INSERT INTO Hills (X,Y,Map_id) VALUES ("+t.pointpos.x+","+t.pointpos.y+","+gm.te.mapID+")");
       }
     } else if (makeriver) {
-      p.setFill(0,0,150,100);
+      p.setFill(0, 0, 150, 100);
       for (TerrainPoint t : gm.te.points) {
         db.query("INSERT INTO Rivers (X,Y,Map_id) VALUES ("+t.pointpos.x+","+t.pointpos.y+","+gm.te.mapID+")");
       }
     }
 
     world.add(p);
-
+    p.setStatic(true);
     gm.te.points.clear();
   }
 

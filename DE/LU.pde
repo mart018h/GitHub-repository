@@ -1,23 +1,50 @@
 class LoadUnit {
   String unitOwner;
   String unitType;
-  String unitId;
+  int unitSize;
+  int soldierAtk;
+  int soldierDef;
+  int soldierSpe;
+  int soldierHP;
+  int soldierW;
+  int soldierH;
+  int r;
+  int g;
+  int b;
 
   void getUnits() {
     db.query("SELECT * FROM Player_Army");
-    unitOwner = "player_unit";
+    unitOwner = "roman";
     while (db.next()) {
-      unitType = db.getString("Unit_type");
-      //unitId = db.getString("unit_id");
-      gm.u.newUnit(unitOwner, unitType);
+      unitSize = db.getInt("unitsize");
+      soldierAtk = db.getInt("soldierAtk");
+      soldierDef = db.getInt("soldierDef");
+      soldierSpe = db.getInt("soldierSpe");
+      soldierHP = db.getInt("soldierHP");
+      soldierW = db.getInt("soldierW");
+      soldierH = db.getInt("soldierH");
+      r = db.getInt("r");
+      g = db.getInt("g");
+      b = db.getInt("b");
+
+      gm.u.newUnit(unitOwner, unitSize, soldierAtk, soldierDef, soldierSpe, soldierHP, soldierW, soldierH, r, g, b);
     }
-    
-    db.query("SELECT * FROM Opponent_Army");
-    unitOwner = "opponent_unit";
+
+    db.query("SELECT * FROM Viking_Army");
+    unitOwner = "viking";
     while (db.next()) {
-      unitType = db.getString("Unit_type");
-      //unitId = db.getString("unit_id");
-      gm.u.newUnit(unitOwner, unitType);
+      unitSize = db.getInt("unitsize");
+      soldierAtk = db.getInt("soldierAtk");
+      soldierDef = db.getInt("soldierDef");
+      soldierSpe = db.getInt("soldierSpe");
+      soldierHP = db.getInt("soldierHP");
+      soldierW = db.getInt("soldierW");
+      soldierH = db.getInt("soldierH");
+      r = db.getInt("r");
+      g = db.getInt("g");
+      b = db.getInt("b");
+      
+      gm.u.newUnit(unitOwner, unitSize, soldierAtk, soldierDef, soldierSpe, soldierHP, soldierW, soldierH, r, g, b);
     }
   }
 }
