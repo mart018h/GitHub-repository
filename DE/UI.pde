@@ -98,16 +98,26 @@ class UserInterface {
   }
 
   void uibattleInitiate() {
-    
+    b13 = new IFButton ("unit 1", 2, 2);
+    b14 = new IFButton ("unit 2", 2, 2);
+    b15 = new IFButton ("unit 3", 2, 2);
+    b16 = new IFButton ("unit 4", 2, 2);
+    b17 = new IFButton ("unit 5", 2, 2);
+
+    c.add (b13);
+    c.add (b14);
+    c.add (b15);
+    c.add (b16);
+    c.add (b17);
   }
 
   void uibattleDisplay() {
     strokeWeight(5);
-    stroke(0, 0, 200);
+    stroke(0, 0, 200, 150);
     noFill();
     rect(20, 50, 200, 600);
 
-    stroke(200, 0, 0);
+    stroke(200, 0, 0, 150);
     rect(980, 50, 200, 600);
   }
 }

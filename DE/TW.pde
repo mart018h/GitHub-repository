@@ -19,13 +19,13 @@ class TerrainWorld {
           p.vertex(t.pointpos.x, t.pointpos.y);
         }
         p.setSensor(true);
-        
+
         if (thisList == gm.lt.hillsmap_1 || thisList == gm.lt.hillsmap_2 || thisList == gm.lt.hillsmap_3) {
           p.setFill(0, 200, 0, 100);
         } else if (thisList == gm.lt.riversmap_1 || thisList == gm.lt.riversmap_2 || thisList == gm.lt.riversmap_3) {
           p.setFill(0, 0, 150, 100);
         }
-        
+
         world.add(p);
         gm.te.points.clear();
       }

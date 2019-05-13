@@ -44,6 +44,16 @@ class UserIntefaceManager {
     b11.setSize(1, 1);
     b12.setPosition(0, 0);
     b12.setSize(1, 1);
+    b13.setPosition(0, 0);
+    b13.setSize(1, 1);
+    b14.setPosition(0, 0);
+    b14.setSize(1, 1);
+    b15.setPosition(0, 0);
+    b15.setSize(1, 1);
+    b16.setPosition(0, 0);
+    b16.setSize(1, 1);
+    b17.setPosition(0, 0);
+    b17.setSize(1, 1);
 
     if (mainmenu) {
       //button size: x= 200, y= 100
@@ -79,7 +89,16 @@ class UserIntefaceManager {
       b12.setPosition(0, 0);
       b12.setSize(60, 40);
     } else if (battle) {
-
+      b13.setPosition(width/6, 650);
+      b13.setSize(40, 50);
+      b14.setPosition(width*2/6, 650);
+      b14.setSize(40, 50);
+      b15.setPosition(width*3/6, 650);
+      b15.setSize(40, 50);
+      b16.setPosition(width*4/6, 650);
+      b16.setSize(40, 50);
+      b17.setPosition(width*5/6, 650);
+      b17.setSize(40, 50);
     }
   }
 
@@ -96,10 +115,10 @@ class UserIntefaceManager {
       world.step();
       world.draw();
       ui.uibattleDisplay();
+      gm.bm.battlerun();
     } else if (campaign) {
       ui.uicampaignDisplay();
     }
-
   }
 
   void uiCampaign() {

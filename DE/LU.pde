@@ -8,6 +8,7 @@ class LoadUnit {
   int soldierHP;
   int soldierW;
   int soldierH;
+  int unitID;
   int r;
   int g;
   int b;
@@ -23,11 +24,12 @@ class LoadUnit {
       soldierHP = db.getInt("soldierHP");
       soldierW = db.getInt("soldierW");
       soldierH = db.getInt("soldierH");
+      unitID = db.getInt("r_unit_id");
       r = db.getInt("r");
       g = db.getInt("g");
       b = db.getInt("b");
 
-      gm.u.newUnit(unitOwner, unitSize, soldierAtk, soldierDef, soldierSpe, soldierHP, soldierW, soldierH, r, g, b);
+      gm.u.newUnit(unitID, unitOwner, unitSize, soldierAtk, soldierDef, soldierSpe, soldierHP, soldierW, soldierH, r, g, b);
     }
 
     db.query("SELECT * FROM Viking_Army");
@@ -40,11 +42,12 @@ class LoadUnit {
       soldierHP = db.getInt("soldierHP");
       soldierW = db.getInt("soldierW");
       soldierH = db.getInt("soldierH");
+      unitID = db.getInt("v_unit_id");
       r = db.getInt("r");
       g = db.getInt("g");
       b = db.getInt("b");
-      
-      gm.u.newUnit(unitOwner, unitSize, soldierAtk, soldierDef, soldierSpe, soldierHP, soldierW, soldierH, r, g, b);
+
+      gm.u.newUnit(unitID, unitOwner, unitSize, soldierAtk, soldierDef, soldierSpe, soldierHP, soldierW, soldierH, r, g, b);
     }
   }
 }
