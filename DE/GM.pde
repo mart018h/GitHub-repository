@@ -42,6 +42,8 @@ class GameManager {
   void mousePressed() {
     if (uim.leveleditor) {
       te.mousePressed();
+    } else if (uim.battle) {
+      bm.mousePressed();
     }
   }
 

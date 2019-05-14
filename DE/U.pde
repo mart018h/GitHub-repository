@@ -3,6 +3,8 @@ class Unit {
 
   //unit values
   ArrayList <Soldier> soldierList = new ArrayList();
+  ArrayList <FBox> VsoldierList = new ArrayList();
+  ArrayList <FBox> PsoldierList = new ArrayList();
 
   //unit formation
   int rows;
@@ -53,8 +55,12 @@ class Unit {
         s = new Soldier(unit_id, unit_owner, soldier_atk, soldier_def, soldier_spe, soldier_hp, soldier_w, soldier_h, r, g, b, startx - j * mineORyours * (Width + xoffset), starty + (unitId-1) * rows * 12 + i * (Height + yoffset));
         world.add(s.sb);
         soldierList.add(s);
+        if (unit_owner == "roman") {
+          PsoldierList.add(s.sb);
+        } else if (unit_owner == "viking") {
+          VsoldierList.add(s.sb);
+        }
       }
     }
-    println("soldiers " + soldierList.size());
   }
 }

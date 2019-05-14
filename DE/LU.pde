@@ -49,5 +49,6 @@ class LoadUnit {
 
       gm.u.newUnit(unitID, unitOwner, unitSize, soldierAtk, soldierDef, soldierSpe, soldierHP, soldierW, soldierH, r, g, b);
     }
+    println("soldiers " + gm.u.soldierList.size());
   }
 }

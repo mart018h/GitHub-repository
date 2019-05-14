@@ -36,10 +36,10 @@ class Database {
     db.query("INSERT INTO Player_Army (unitSize, soldierAtk, soldierDef, soldierSpe, soldierHP, soldierW, soldierH, r, g, b) VALUES (40, 10, 10, 20, 200, 5, 5, 200, 0, 0)");
   }
   void addCavalry_I() {
-    db.query("INSERT INTO Player_Army (unitSize, soldierAtk, soldierDef, soldierSpe, soldierHP, soldierW, soldierH, r, g, b) VALUES (20, 6, 10, 20, 100, 10, 5, 100, 150, 50)");
+    db.query("INSERT INTO Player_Army (unitSize, soldierAtk, soldierDef, soldierSpe, soldierHP, soldierW, soldierH, r, g, b) VALUES (20, 6, 10, 30, 100, 10, 5, 100, 150, 50)");
   }
   void addCavalry_II() {
-    db.query("INSERT INTO Player_Army (unitSize, soldierAtk, soldierDef, soldierSpe, soldierHP, soldierW, soldierH, r, g, b) VALUES (20, 8, 10, 20, 150, 10, 5, 100, 150, 50)");
+    db.query("INSERT INTO Player_Army (unitSize, soldierAtk, soldierDef, soldierSpe, soldierHP, soldierW, soldierH, r, g, b) VALUES (20, 8, 10, 35, 150, 10, 5, 100, 150, 50)");
   }
   void addCommander() {
     db.query("INSERT INTO Player_Army (unitSize, soldierAtk, soldierDef, soldierSpe, soldierHP, soldierW, soldierH, r, g, b) VALUES (10, 15, 10, 20, 250, 5, 5, 200, 200, 0)");
